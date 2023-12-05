@@ -51,4 +51,13 @@
         android:layout_alignEnd="@+id/registrarActividadBtn"
         android:text="Ver Historial" />
 
+    <Button
+        android:id="@+id/verHospitalesBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/verHistorialBtn"
+        android:layout_alignStart="@+id/verHistorialBtn"
+        android:layout_alignEnd="@+id/verHistorialBtn"
+        android:text="Hospitales" />
+
 </RelativeLayout>

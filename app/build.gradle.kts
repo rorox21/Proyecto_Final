@@ -32,6 +32,7 @@ android {
 
 dependencies {
 
+    implementation ("com.google.android.gms:play-services-maps:18.1.0")
     implementation ("com.google.firebase:firebase-common:20.4.2")
     implementation ("com.google.firebase:firebase-firestore:24.9.1")
     implementation ("com.google.firebase:firebase-database:20.3.0")

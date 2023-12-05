@@ -21,7 +21,7 @@ public class MainActivity extends AppCompatActivity {
     private static final String TAG = "MainActivity";
 
     private EditText tipoActividadEditText, distanciaEditText, tiempoEditText;
-    private Button registrarActividadBtn, verHistorialBtn;  // Nuevos botones
+    private Button registrarActividadBtn, verHistorialBtn, verHospitalesBtn;
     private DatabaseReference databaseReference;
 
     @Override
@@ -51,8 +51,15 @@ public class MainActivity extends AppCompatActivity {
         verHistorialBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // Abrir la actividad de historial
                 startActivity(new Intent(MainActivity.this, historial.class));
+            }
+        });
+
+        verHospitalesBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(),activity_map.class);
+                startActivity(intent);
             }
         });
     }
