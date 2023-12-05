@@ -39,7 +39,9 @@ public class MainActivity extends AppCompatActivity {
         distanciaEditText = findViewById(R.id.distanciaEditText);
         tiempoEditText = findViewById(R.id.tiempoEditText);
         registrarActividadBtn = findViewById(R.id.registrarActividadBtn);
-        verHistorialBtn = findViewById(R.id.verHistorialBtn);  // Nueva referencia
+        verHistorialBtn = findViewById(R.id.verHistorialBtn);
+        verHospitalesBtn = findViewById(R.id.verHospitalesBtn);
+        // Nueva referencia
 
         registrarActividadBtn.setOnClickListener(new View.OnClickListener() {
             @Override

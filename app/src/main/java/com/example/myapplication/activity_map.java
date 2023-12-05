@@ -13,7 +13,6 @@ import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
-import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
 
 public class activity_map extends AppCompatActivity implements OnMapReadyCallback {
@@ -44,31 +43,15 @@ public class activity_map extends AppCompatActivity implements OnMapReadyCallbac
     @Override
     public void onMapReady(@NonNull GoogleMap googleMap) {
         mMap = googleMap;
-        float zoomLevel = 9;
+        
+        agregarMarcador(-36.60601809807034, -72.10568388828969, "Centro Médico Crecersalud", 12f);
+        agregarMarcador(-36.43004686225497, -71.9600747177866, "Hospital de San Carlos", 14f);
+        agregarMarcador(-36.60845343277807, -72.09280747545738, "Hospital Clínico Herminda Martín", 13f);
+    }
 
-        LatLng hospitalBulnes = new LatLng(-36.73924, -72.29629);
-        mMap.addMarker(new MarkerOptions().position(hospitalBulnes).title("Hospital de Bulnes"));
-        mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(hospitalBulnes, zoomLevel));
-
-        volver.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(hospitalBulnes, zoomLevel));
-                volver.setVisibility(View.INVISIBLE);
-                home.setVisibility(View.VISIBLE);
-            }
-        });
-
-        mMap.setOnMarkerClickListener(new GoogleMap.OnMarkerClickListener() {
-            @Override
-            public boolean onMarkerClick(Marker marker) {
-                volver.setVisibility(View.VISIBLE);
-                home.setVisibility(View.INVISIBLE);
-                LatLng markerPosition = marker.getPosition();
-                float zoom = 18f;
-                mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(markerPosition, zoom));
-                return true;
-            }
-        });
+    private void agregarMarcador(double latitud, double longitud, String titulo, float zoom) {
+        LatLng ubicacion = new LatLng(latitud, longitud);
+        mMap.addMarker(new MarkerOptions().position(ubicacion).title(titulo));
+        mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(ubicacion, zoom));
     }
 }
