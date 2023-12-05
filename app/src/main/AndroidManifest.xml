@@ -40,6 +40,10 @@
         <activity
             android:name=".activity_map"
             android:exported="false" />
+        <activity
+            android:name=".HistorialActivity"
+            android:exported="false"/>
+
     </application>
 
 </manifest>

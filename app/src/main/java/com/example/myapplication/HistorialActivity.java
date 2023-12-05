@@ -30,19 +30,12 @@ public class HistorialActivity extends AppCompatActivity {
         setContentView(R.layout.activity_historial);
 
         // Inicializar Firebase
-        try {
-            FirebaseApp.initializeApp(this);
-            Log.d("HistorialActivity", "Firebase inicializado correctamente");
-        } catch (Exception e) {
-            Log.e("HistorialActivity", "Error al inicializar Firebase: " + e.getMessage());
-        }
-
+        FirebaseApp.initializeApp(this);
         databaseReference = FirebaseDatabase.getInstance().getReference();
         historialListView = findViewById(R.id.historialListView);
         historialAdapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, new ArrayList<>());
         historialListView.setAdapter(historialAdapter);
 
-        // Obtener y mostrar el historial
         mostrarHistorial();
     }
 
@@ -52,30 +45,16 @@ public class HistorialActivity extends AppCompatActivity {
         historialRef.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                Log.d("HistorialActivity", "DataSnapshot: " + dataSnapshot);
-
                 if (dataSnapshot.exists()) {
-                    Log.d("HistorialActivity", "Existen datos");
-
                     for (DataSnapshot actividadSnapshot : dataSnapshot.getChildren()) {
-                        try {
-                            Actividad actividad = actividadSnapshot.getValue(Actividad.class);
-                            if (actividad != null) {
-                                Log.d("HistorialActivity", "Actividad: " + actividad.toString());
-                                historialAdapter.add(actividad.toString());
-                            }
-                        } catch (Exception e) {
-                            Log.e("HistorialActivity", "Error al obtener datos: " + e.getMessage());
+                        Actividad actividad = actividadSnapshot.getValue(Actividad.class);
+                        if (actividad != null) {
+                            historialAdapter.add(actividad.toString());
                         }
                     }
                 } else {
-                    Log.d("HistorialActivity", "No existen datos");
                     historialAdapter.add("No hay actividades registradas.");
                 }
-
-                // Log para verificar si se está actualizando la lista
-                Log.d("HistorialActivity", "Tamaño del historial después de actualizar: " + historialAdapter.getCount());
-                Log.d("HistorialActivity", "Lista de actividades después de actualizar: " + historialAdapter.toString());
             }
 
             @Override

@@ -4,20 +4,17 @@ public class Actividad {
 
     private String tipoActividad;
     private double distancia;
-    private int tiempo;
+    private String tiempo;
 
-    // Constructor vacío requerido para Firebase
     public Actividad() {
     }
 
-    // Constructor
-    public Actividad(String tipoActividad, double distancia, int tiempo) {
+    public Actividad(String tipoActividad, double distancia, String tiempo) {
         this.tipoActividad = tipoActividad;
         this.distancia = distancia;
         this.tiempo = tiempo;
     }
 
-    // Métodos getters y setters (asegúrate de tener estos métodos)
     public String getTipoActividad() {
         return tipoActividad;
     }
@@ -34,11 +31,11 @@ public class Actividad {
         this.distancia = distancia;
     }
 
-    public int getTiempo() {
+    public String getTiempo() {
         return tiempo;
     }
 
-    public void setTiempo(int tiempo) {
+    public void setTiempo(String tiempo) {
         this.tiempo = tiempo;
     }
 
