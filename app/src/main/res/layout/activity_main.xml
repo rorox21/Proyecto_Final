@@ -37,7 +37,7 @@
         android:id="@+id/registrarActividadBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Registrar Actividad"
+        android:text="@string/registrar_actividad"
         android:layout_below="@id/tiempoEditText"
         android:layout_marginTop="16dp"
         />
@@ -49,7 +49,7 @@
         android:layout_below="@+id/registrarActividadBtn"
         android:layout_alignStart="@+id/registrarActividadBtn"
         android:layout_alignEnd="@+id/registrarActividadBtn"
-        android:text="Ver Historial" />
+        android:text="@string/ver_historial" />
 
     <Button
         android:id="@+id/verHospitalesBtn"
@@ -58,6 +58,7 @@
         android:layout_below="@+id/verHistorialBtn"
         android:layout_alignStart="@+id/verHistorialBtn"
         android:layout_alignEnd="@+id/verHistorialBtn"
-        android:text="Hospitales" />
+        android:text="@string/hospitales" />
+
 
 </RelativeLayout>

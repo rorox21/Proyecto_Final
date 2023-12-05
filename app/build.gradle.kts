@@ -10,7 +10,6 @@ android {
     defaultConfig {
         applicationId = "com.example.myapplication"
         minSdk = 29
-        targetSdk = 33
         versionCode = 1
         versionName = "1.0"
 
@@ -32,7 +31,7 @@ android {
 
 dependencies {
 
-    implementation ("com.google.android.gms:play-services-maps:18.1.0")
+    implementation ("com.google.android.gms:play-services-maps:18.2.0")
     implementation ("com.google.firebase:firebase-common:20.4.2")
     implementation ("com.google.firebase:firebase-firestore:24.9.1")
     implementation ("com.google.firebase:firebase-database:20.3.0")

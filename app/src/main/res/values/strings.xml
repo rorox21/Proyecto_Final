@@ -1,3 +1,6 @@
 <resources>
     <string name="app_name">My Application</string>
+    <string name="hospitales">Hospitales</string>
+    <string name="ver_historial">Ver Historial</string>
+    <string name="registrar_actividad">Registrar Actividad</string>
 </resources>
